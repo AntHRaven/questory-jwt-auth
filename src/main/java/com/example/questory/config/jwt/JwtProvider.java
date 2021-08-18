@@ -19,6 +19,7 @@ public class JwtProvider {
     private String jwtSecret;
 
     public String generateToken(String login) {
+        //Время жизни
         Date date = Date.from(LocalDate.now().plusDays(15).atStartOfDay(ZoneId.systemDefault()).toInstant());
         return Jwts.builder()
                 .setSubject(login)
